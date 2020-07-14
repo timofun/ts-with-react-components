@@ -11,7 +11,7 @@ function App() {
         <Button size={ButtonSize.Small}>Hello</Button>
         <Button btnType={ButtonType.Primary} size={ButtonSize.Large}>Hells</Button>
         <Button btnType={ButtonType.Danger} size={ButtonSize.Large}>Hells</Button>
-        <Button btnType={ButtonType.Link} href="http://www.baidu.com">baidu</Button>
+        <Button btnType={ButtonType.Link} href="http://www.baidu.com" target="_blank">baidu</Button>
         <Button btnType={ButtonType.Link} href="http://www.baidu.com" disabled>baidu</Button>
       </header>
     </div>
