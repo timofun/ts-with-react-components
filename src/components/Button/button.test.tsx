@@ -1,13 +1,13 @@
 import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
-import Button, { ButtonProps } from './button'
+import Button, { ButtonProps, ButtonType, ButtonSize } from './button'
 const defaultProps = {
   onClick: jest.fn()
 }
 
 const testProps: ButtonProps = {
-  btnType: 'primary',
-  size: 'lg',
+  btnType: ButtonType.Primary,
+  size: ButtonSize.Large,
   className: 'klass'
 }
 
@@ -33,7 +33,7 @@ describe('test Button component', () => {
     expect(element).toHaveClass('btn-primary btn-lg klass')
   })
   it('should render a link when btnType equals link and href is provided', () => {
-    const wrapper = render(<Button btnType='link' href="http://dummyurl">Link</Button>)
+    const wrapper = render(<Button btnType={ButtonType.Link} href="http://dummyurl">Link</Button>)
     const element = wrapper.getByText('Link')
     expect(element).toBeInTheDocument()
     expect(element.tagName).toEqual('A')
