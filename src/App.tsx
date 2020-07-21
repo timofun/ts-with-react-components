@@ -1,34 +1,25 @@
-import React from 'react'
-import './App.css'
-import './styles/index.scss'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from '@fortawesome/free-solid-svg-icons'
-import Menu from './components/Menu/menu'
-import MenuItem from './components/Menu/menuItem'
-import SubMenu from './components/Menu/subMenu'
-library.add(fas)
-
-function App() {
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+const App: React.FC = () => {
+  const [ title, setTitle ] = useState('')
+  const postData = {
+    title: 'my title',
+    body: 'hello man'
+  }
+  useEffect(() => {
+    axios.post('https://jsonplaceholder.typicode.com/posts', postData)
+      .then(res => {
+        console.log(res)
+        setTitle(res.data.title)
+      })
+  }, [])
   return (
     <div className="App">
       <header className="App-header">
-        <Menu className="App-menu" defaultIndex="0" onSelect={(index) => {}}>
-          <MenuItem>menu1</MenuItem>
-          <SubMenu title={'ahhahah'}>
-            <MenuItem>menu1</MenuItem>
-            <MenuItem>
-              menu2
-            </MenuItem>
-            <MenuItem>menu3</MenuItem>
-          </SubMenu>
-          <MenuItem>
-            menu2
-          </MenuItem>
-          <MenuItem>menu3</MenuItem>
-        </Menu>
+        <h1>{title}</h1>
       </header>
     </div>
-  );
+  )
 }
 
 export default App;
