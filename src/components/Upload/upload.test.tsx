@@ -48,6 +48,7 @@ describe('test upload component', () => {
     
     //remove the uploaded file
     expect(queryByText('times')).toBeInTheDocument()
+    // @ts-ignore
     fireEvent.click(queryByText('times'))
     expect(queryByText('test.png')).not.toBeInTheDocument()
     expect(testProps.onRemove).toHaveBeenCalledWith(expect.objectContaining({
