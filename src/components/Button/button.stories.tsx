@@ -4,7 +4,9 @@ import { action } from '@storybook/addon-actions'
 import Button from './button'
 
 const defaultButton = () => (
-  <Button onClick={action('clicked')}> default button </Button>
+  <Button onClick={action('clicked')}>
+    <span>default button</span>
+  </Button>
 )
 
 const buttonWithSize = () => (
