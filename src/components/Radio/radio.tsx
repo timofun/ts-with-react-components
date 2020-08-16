@@ -5,6 +5,7 @@ import classNames from 'classnames'
 type RadioSize = 'lg' | 'middle' | 'sm'
 
 export interface RadioProps {
+  type?: string,
   size?: RadioSize,
   disabled?: boolean,
   children?: React.ReactNode,
@@ -27,14 +28,15 @@ export const Radio: FC<RadioProps> = (props) => {
   
   return (
     <label className={classes}>
-      <RcCheckbox disabled={disabled} {...restProps} />
+      <RcCheckbox disabled={disabled} {...restProps} prefixCls="funs-radio" />
       {children !== undefined ? <span>{children}</span> : null}
     </label>
   )
 }
 
 Radio.defaultProps = {
-  size: 'lg'
+  size: 'lg',
+  type: 'radio'
 }
 
 export default Radio
