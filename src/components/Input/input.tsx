@@ -23,7 +23,7 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, 'size
  *
  * ~~~js
  * // 这样引用
- * import { Input } from 'vikingship'
+ * import { Input } from 'funsship'
  * ~~~
  * 支持 HTMLInput 的所有基本属性
  */
@@ -37,7 +37,7 @@ export const Input: FC<InputProps> = (props) => {
     style,
     ...restProps
   } = props
-  const cnames = classNames('viking-input-wrapper', {
+  const cnames = classNames('funs-input-wrapper', {
     [`input-size-${size}`]: size,
     'is-disabled': disabled,
     'input-group': prepend || append,
@@ -56,14 +56,14 @@ export const Input: FC<InputProps> = (props) => {
   }
   return (
     <div className={cnames} style={style}>
-      {prepend && <div className="viking-input-group-prepend">{prepend}</div>}
+      {prepend && <div className="funs-input-group-prepend">{prepend}</div>}
       {icon && <div className="icon-wrapper"><Icon icon={icon} title={`title-${icon}`}/></div>}
       <input
-        className="viking-input-inner"
+        className="funs-input-inner"
         disabled={disabled}
         {...restProps}
       />
-      {append && <div className="viking-input-group-append">{append}</div>}
+      {append && <div className="funs-input-group-append">{append}</div>}
     </div>
   )
 }

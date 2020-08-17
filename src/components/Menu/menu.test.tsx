@@ -52,10 +52,10 @@ const generateMenu = (props: MenuProps) => {
 }
 const createStyleFile = () => {
   const cssFile: string = `
-    .viking-submenu {
+    .funs-submenu {
       display: none;
     }
-    .viking-submenu.menu-opened {
+    .funs-submenu.menu-opened {
       display:block;
     }
   `
@@ -75,7 +75,7 @@ describe('test Menu and MenuItem component in default(horizontal) mode', () => {
   })
   it('should render correct Menu and MenuItem based on default props', () => {
     expect(menuElement).toBeInTheDocument()
-    expect(menuElement).toHaveClass('viking-menu test')
+    expect(menuElement).toHaveClass('funs-menu test')
     expect(menuElement.querySelectorAll(':scope > li').length).toEqual(5)
     expect(activeElement).toHaveClass('menu-item is-active')
     expect(disabledElement).toHaveClass('menu-item is-disabled')

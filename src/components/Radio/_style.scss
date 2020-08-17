@@ -1,0 +1,113 @@
+$radio-prefix-cls: 'funs-radio';
+$radio-duration: 0.3s;
+$radio-focus-shadow: 0 0 0 3px fade-out($radio-dot-color, 0.08);
+$radio-button-focus-shadow: $radio-focus-shadow;
+
+
+.#{$radio-prefix-cls}-wrapper {
+  @include reset-component();
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.#{$radio-prefix-cls} {
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  vertical-align: sub;
+  outline: none;
+  cursor: pointer;
+
+  &-inner {
+    &::after {
+      $radio-dot-size: $radio-size - 8px;
+      position: absolute;
+      top: ($radio-size - $radio-dot-size) / 2 - 1px;
+      left: ($radio-size - $radio-dot-size) / 2 - 1px;
+      display: table;
+      width: $radio-dot-size;
+      height: $radio-dot-size;
+      background-color: $radio-dot-color;
+      border-top: 0;
+      border-left: 0;
+      border-radius: $radio-dot-size;
+      transform: scale(0);
+      opacity: 0;
+      transition: all $radio-duration $ease-in-out-circ;
+      content: ' ';
+    }
+
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    width: $radio-size;
+    height: $radio-size;
+    background-color: $radio-button-bg;
+    border-color: $border-color;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 100px;
+    transition: all $radio-duration;
+  }
+
+  &-checked {
+    .#{$radio-prefix-cls}-inner {
+      border-color: $radio-dot-color;
+    }
+  }
+
+  &-input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    cursor: pointer;
+    opacity: 0;
+  }
+}
+
+// 选中状态
+.#{$radio-prefix-cls}-checked {
+  .#{$radio-prefix-cls}-inner {
+    border-color: $radio-dot-color;
+
+    &::after {
+      transform: scale(1);
+      opacity: 1;
+      transition: all $radio-duration $ease-in-out-circ;
+    }
+  }
+}
+
+.#{$radio-prefix-cls}-disabled {
+  .#{$radio-prefix-cls}-inner {
+    background-color: $input-disabled-bg;
+    border-color: $border-color !important;
+    cursor: not-allowed;
+
+    &::after {
+      background-color: $radio-dot-disabled-color;
+    }
+  }
+
+  .#{$radio-prefix-cls}-input {
+    cursor: not-allowed;
+  }
+
+  & + span {
+    color: $disabled-color;
+    cursor: not-allowed;
+  }
+}
+
+
+span.funs-radio + * {
+  padding-left: 8px;
+  padding-right: 8px;
+}

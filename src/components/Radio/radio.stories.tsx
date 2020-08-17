@@ -8,5 +8,12 @@ const defaultRadio = () => (
   </Radio>
 )
 
+const disabledRadio = () => (
+  <Radio disabled>
+    Radio
+  </Radio>
+)
+
 storiesOf('Radio Component', module)
   .add('Radio', defaultRadio)
+  .add('disabled radio', disabledRadio)

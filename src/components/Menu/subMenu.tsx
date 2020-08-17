@@ -40,7 +40,7 @@ export const SubMenu: FC<SubMenuProps> = ({ index, title, children, className}) 
     onMouseLeave: (e: MouseEvent) => { handleMouse(e, false)}
   } : {}
   const renderChildren = () => {
-    const subMenuClasses = classNames('viking-submenu', {
+    const subMenuClasses = classNames('funs-submenu', {
       'menu-opened': menuOpen
     })
     const childrenComponent = Children.map(children, (child, i) => {

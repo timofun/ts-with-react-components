@@ -15,8 +15,8 @@ test('test number', () => {
 
 test('test object', () => {
     expect({
-        name: 'viking'
+        name: 'funs'
     }).toEqual({
-        name: 'viking'
+        name: 'funs'
     })
 })

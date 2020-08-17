@@ -59,6 +59,13 @@ $font-weight-bold: 700 !default;
 $font-weight-bolder: bolder !default;
 $font-weight-base: $font-weight-normal !default;
 
+$font-variant-base: tabular-nums;
+$font-feature-settings-base: 'tnum';
+
+// 字体颜色
+$text-color: fade-out($black, 0.35);
+$text-color-dark: fade-out($white, 0.15);
+
 // 行高
 $line-height-base: 1.5 !default;
 $line-height-lg: 2 !default;
@@ -151,6 +158,22 @@ $mark-bg: #fcf8e3 !default;
 
 $hr-margin-y: $spacer !default;
 
+// Animation
+$ease-base-out: cubic-bezier(0.7, 0.3, 0.1, 1);
+$ease-base-in: cubic-bezier(0.9, 0, 0.3, 0.7);
+$ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+$ease-in: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+$ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+$ease-out-back: cubic-bezier(0.12, 0.4, 0.29, 1.46);
+$ease-in-back: cubic-bezier(0.71, -0.46, 0.88, 0.6);
+$ease-in-out-back: cubic-bezier(0.71, -0.46, 0.29, 1.46);
+$ease-out-circ: cubic-bezier(0.08, 0.82, 0.17, 1);
+$ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.34);
+$ease-in-out-circ: cubic-bezier(0.78, 0.14, 0.15, 0.86);
+$ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+$ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+$ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+
 // Code
 
 $code-font-size: $small-font-size !default;
@@ -168,6 +191,15 @@ $border-color: $gray-300 !default;
 $border-radius: .25rem !default;
 $border-radius-lg: .3rem !default;
 $border-radius-sm: .2rem !default;
+
+$background-color-light: hsl(0, 0, 98%); // background of header and selected item
+$background-color-base: hsl(0, 0, 96%); // Default grey background color
+
+
+// Disabled states
+$disabled-color: fade-out(#000, 0.75);
+$disabled-bg: $background-color-base;
+$disabled-color-dark: fade-out(#fff, 0.65);
 
 // 不同类型的 box shadow
 $box-shadow-sm: 0 .125rem .25rem rgba($black, .075) !default;
@@ -285,3 +317,20 @@ $progress-bg: $gray-200 !default;
 $progress-border-radius: $border-radius !default;
 $progress-bar-color: $white !default;
 $progress-bar-transition: width .6s ease !default;
+
+// Radio
+$radio-size: 16px;
+$radio-top: 0px;
+$radio-dot-color: $primary;
+$radio-dot-disabled-color: fade-out($black, 0.8);
+$radio-solid-checked-color: $white;
+
+// Radio buttons
+$radio-button-bg: $white;
+$radio-button-checked-bg: $primary;
+$radio-button-color: $white;
+$radio-button-hover-color: lighten($primary, 50%);
+$radio-button-active-color: darken($primary, 20%);
+$radio-disabled-button-checked-bg: lighten($black, 90%);
+$radio-disabled-button-checked-color: $white;
+$radio-wrapper-margin-right: 8px;

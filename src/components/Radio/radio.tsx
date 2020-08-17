@@ -7,6 +7,7 @@ type RadioSize = 'lg' | 'middle' | 'sm'
 export interface RadioProps {
   type?: string,
   size?: RadioSize,
+  checked?: boolean,
   disabled?: boolean,
   children?: React.ReactNode,
   className?: string
@@ -16,14 +17,16 @@ export const Radio: FC<RadioProps> = (props) => {
   const {
     size,
     disabled,
+    checked,
     children,
     className,
     ...restProps
   } = props
   
-  const classes = classNames('funs-radio', className, {
+  const classes = classNames('funs-radio-wrapper', className, {
     [`funs-radio-${size}`]: size,
-    'disabled': disabled
+    ['funs-radio-disabled']: disabled,
+    ['funs-radio-checked']: checked
   })
   
   return (
