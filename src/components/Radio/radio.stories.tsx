@@ -3,13 +3,14 @@ import { storiesOf } from '@storybook/react'
 import Radio from './radio'
 
 const defaultRadio = () => (
-  <Radio>
-    Radio
-  </Radio>
+  <>
+    <Radio>Radio1</Radio>
+    <Radio>Radio2</Radio>
+  </>
 )
 
 const disabledRadio = () => (
-  <Radio disabled>
+  <Radio disabled checked>
     Radio
   </Radio>
 )

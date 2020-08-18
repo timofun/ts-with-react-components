@@ -1,44 +1,52 @@
 import React, { FC } from 'react'
 import RcCheckbox from 'rc-checkbox'
 import classNames from 'classnames'
-
-type RadioSize = 'lg' | 'middle' | 'sm'
-
-export interface RadioProps {
-  type?: string,
-  size?: RadioSize,
-  checked?: boolean,
-  disabled?: boolean,
-  children?: React.ReactNode,
-  className?: string
-}
+import { RadioProps, RadioChangeEvent, RadioGroupContext } from './interface'
 
 export const Radio: FC<RadioProps> = (props) => {
+  const context = React.useContext(RadioGroupContext);
+  
+  const onChange = (e: RadioChangeEvent) => {
+    if (props.onChange) {
+      props.onChange(e);
+    }
+    
+    // if (context?.onChange) {
+    //   context.onChange(e);
+    // }
+  };
+  
   const {
-    size,
+    prefixCls: customizePrefixCls,
     disabled,
     checked,
     children,
     className,
+    style,
     ...restProps
   } = props
-  
-  const classes = classNames('funs-radio-wrapper', className, {
-    [`funs-radio-${size}`]: size,
-    ['funs-radio-disabled']: disabled,
-    ['funs-radio-checked']: checked
+  const radioProps: RadioProps = { ...restProps };
+  if (context) {
+    radioProps.name = context.name;
+    radioProps.onChange = onChange;
+    radioProps.checked = props.value === context.value;
+    radioProps.disabled = props.disabled || context.disabled;
+  }
+  const headerClass = 'funs-radio'
+  const classes = classNames(`${headerClass}-wrapper`, className, {
+    [`${headerClass}-disabled`]: disabled,
+    [`${headerClass}-checked`]: checked
   })
   
   return (
     <label className={classes}>
-      <RcCheckbox disabled={disabled} {...restProps} prefixCls="funs-radio" />
+      <RcCheckbox disabled={disabled} {...radioProps} prefixCls="funs-radio" />
       {children !== undefined ? <span>{children}</span> : null}
     </label>
   )
 }
 
 Radio.defaultProps = {
-  size: 'lg',
   type: 'radio'
 }
 
