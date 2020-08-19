@@ -11,15 +11,13 @@ export const Radio: FC<RadioProps> = (props) => {
       props.onChange(e);
     }
     
-    // if (context?.onChange) {
-    //   context.onChange(e);
-    // }
+    if (context?.onChange) {
+      context.onChange(e);
+    }
   };
   
   const {
     prefixCls: customizePrefixCls,
-    disabled,
-    checked,
     children,
     className,
     style,
@@ -34,13 +32,13 @@ export const Radio: FC<RadioProps> = (props) => {
   }
   const headerClass = 'funs-radio'
   const classes = classNames(`${headerClass}-wrapper`, className, {
-    [`${headerClass}-disabled`]: disabled,
-    [`${headerClass}-checked`]: checked
+    [`${headerClass}-disabled`]: radioProps.disabled,
+    [`${headerClass}-checked`]: radioProps.checked
   })
   
   return (
     <label className={classes}>
-      <RcCheckbox disabled={disabled} {...radioProps} prefixCls="funs-radio" />
+      <RcCheckbox {...radioProps} prefixCls={customizePrefixCls} />
       {children !== undefined ? <span>{children}</span> : null}
     </label>
   )

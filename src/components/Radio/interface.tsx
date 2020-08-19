@@ -42,14 +42,14 @@ export interface RadioGroupContextProps {
   name?: string;
 }
 
-export interface RadioProps {
+export interface AbstractCheckboxProps<T> {
   prefixCls?: string;
   className?: string;
   defaultChecked?: boolean;
   checked?: boolean;
   style?: React.CSSProperties;
   disabled?: boolean;
-  onChange?: (e: RadioChangeEvent) => void;
+  onChange?: (e: T) => void;
   onClick?: React.MouseEventHandler<HTMLElement>;
   onMouseEnter?: React.MouseEventHandler<HTMLElement>;
   onMouseLeave?: React.MouseEventHandler<HTMLElement>;
@@ -64,6 +64,8 @@ export interface RadioProps {
   type?: string;
 }
 
+export type RadioProps = AbstractCheckboxProps<RadioChangeEvent>;
+
 export interface RadioChangeEventTarget extends RadioProps {
   checked: boolean;
 }
@@ -72,7 +74,7 @@ export interface RadioChangeEvent {
   target: RadioChangeEventTarget;
   stopPropagation: () => void;
   preventDefault: () => void;
-  // nativeEvent: MouseEvent;
+  nativeEvent: MouseEvent;
 }
 
 export const RadioGroupContext = React.createContext<RadioGroupContextProps | null>(null);
