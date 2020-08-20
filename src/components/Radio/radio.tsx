@@ -1,20 +1,21 @@
-import React, { FC } from 'react'
+import React, { FC, useContext } from 'react'
 import RcCheckbox from 'rc-checkbox'
 import classNames from 'classnames'
 import { RadioProps, RadioChangeEvent, RadioGroupContext } from './interface'
+import { ConfigContext } from '../configProvider/context'
 
 export const Radio: FC<RadioProps> = (props) => {
-  const context = React.useContext(RadioGroupContext);
-  
+  const context = React.useContext(RadioGroupContext)
+  const { getPrefixCls } = useContext(ConfigContext)
   const onChange = (e: RadioChangeEvent) => {
     if (props.onChange) {
-      props.onChange(e);
+      props.onChange(e)
     }
     
     if (context?.onChange) {
-      context.onChange(e);
+      context.onChange(e)
     }
-  };
+  }
   
   const {
     prefixCls: customizePrefixCls,
@@ -23,12 +24,13 @@ export const Radio: FC<RadioProps> = (props) => {
     style,
     ...restProps
   } = props
-  const radioProps: RadioProps = { ...restProps };
+  const radioProps: RadioProps = { ...restProps }
+  const prefixCls = getPrefixCls('radio', customizePrefixCls)
   if (context) {
-    radioProps.name = context.name;
-    radioProps.onChange = onChange;
-    radioProps.checked = props.value === context.value;
-    radioProps.disabled = props.disabled || context.disabled;
+    radioProps.name = context.name
+    radioProps.onChange = onChange
+    radioProps.checked = props.value === context.value
+    radioProps.disabled = props.disabled || context.disabled
   }
   const headerClass = 'funs-radio'
   const classes = classNames(`${headerClass}-wrapper`, className, {
@@ -38,7 +40,7 @@ export const Radio: FC<RadioProps> = (props) => {
   
   return (
     <label className={classes}>
-      <RcCheckbox {...radioProps} prefixCls={customizePrefixCls} />
+      <RcCheckbox {...radioProps} prefixCls={prefixCls}/>
       {children !== undefined ? <span>{children}</span> : null}
     </label>
   )
