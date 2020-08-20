@@ -1,13 +1,10 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import Radio from './radio'
-import RadioGroup from './group'
+import TransRadio from './index'
 
 const defaultRadio = () => (
-  <>
-    <Radio>Radio1</Radio>
-    <Radio>Radio2</Radio>
-  </>
+  <Radio>Radio</Radio>
 )
 
 const disabledRadio = () => (
@@ -17,10 +14,11 @@ const disabledRadio = () => (
 )
 
 const GroupRadio = () => (
-  <RadioGroup>
+  <TransRadio.Group defaultValue={1}>
     <Radio value={1}>Radio1</Radio>
     <Radio value={2}>Radio2</Radio>
-  </RadioGroup>
+    <Radio value={3} disabled>Radio3</Radio>
+  </TransRadio.Group>
 )
 
 storiesOf('Radio Component', module)

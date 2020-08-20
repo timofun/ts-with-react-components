@@ -8,6 +8,7 @@ $radio-button-focus-shadow: $radio-focus-shadow;
   @include reset-component();
   position: relative;
   display: inline-block;
+  margin-right: $radio-wrapper-margin-right;
   white-space: nowrap;
   cursor: pointer;
 }

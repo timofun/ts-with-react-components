@@ -3,9 +3,9 @@ import RadioGroup from './group'
 import { RadioGroupProps, RadioProps } from './interface'
 import { FC } from 'react'
 export * from './interface';
-export type IMenuComponent = FC<RadioProps> & {
+export type IRadioComponent = FC<RadioProps> & {
   Group: FC<RadioGroupProps>
 }
-const TransRadio = Radio as IMenuComponent
+const TransRadio = Radio as IRadioComponent
 TransRadio.Group = RadioGroup
 export default TransRadio
