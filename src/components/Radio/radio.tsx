@@ -34,8 +34,8 @@ export const Radio: FC<RadioProps> = (props) => {
   }
   const headerClass = 'funs-radio'
   const classes = classNames(`${headerClass}-wrapper`, className, {
-    [`${headerClass}-disabled`]: radioProps.disabled,
-    [`${headerClass}-checked`]: radioProps.checked
+    [`${headerClass}-wrapper-disabled`]: radioProps.disabled,
+    [`${headerClass}-wrapper-checked`]: radioProps.checked
   })
   
   return (

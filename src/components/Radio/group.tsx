@@ -63,4 +63,8 @@ export const RadioGroup: FC<RadioGroupProps> = (props) => {
   )
 }
 
+RadioGroup.defaultProps = {
+  buttonStyle: 'outline'
+}
+
 export default RadioGroup
