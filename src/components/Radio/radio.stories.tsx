@@ -13,7 +13,7 @@ const disabledRadio = () => (
   </Radio>
 )
 
-const GroupRadio = () => (
+const groupRadio = () => (
   <TransRadio.Group defaultValue={1}>
     <Radio value={1}>Radio1</Radio>
     <Radio value={2}>Radio2</Radio>
@@ -21,7 +21,15 @@ const GroupRadio = () => (
   </TransRadio.Group>
 )
 
+const groupRadioButton = () => (
+  <TransRadio.Group defaultValue={1} optionType="button" buttonStyle="solid">
+    <Radio value={1}>Radio1</Radio>
+    <Radio value={2}>Radio2</Radio>
+  </TransRadio.Group>
+)
+
 storiesOf('Radio Component', module)
   .add('Radio', defaultRadio)
   .add('disabled radio', disabledRadio)
-  .add('RadioGroup', GroupRadio)
+  .add('RadioGroup', groupRadio)
+  .add('RadioButton', groupRadioButton)

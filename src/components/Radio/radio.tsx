@@ -25,17 +25,19 @@ export const Radio: FC<RadioProps> = (props) => {
     ...restProps
   } = props
   const radioProps: RadioProps = { ...restProps }
-  const prefixCls = getPrefixCls('radio', customizePrefixCls)
+  let prefixCls = getPrefixCls('radio', customizePrefixCls)
   if (context) {
     radioProps.name = context.name
     radioProps.onChange = onChange
     radioProps.checked = props.value === context.value
     radioProps.disabled = props.disabled || context.disabled
+    if (context.optionType === 'button') {
+      prefixCls = getPrefixCls('radio-button', customizePrefixCls)
+    }
   }
-  const headerClass = 'funs-radio'
-  const classes = classNames(`${headerClass}-wrapper`, className, {
-    [`${headerClass}-wrapper-disabled`]: radioProps.disabled,
-    [`${headerClass}-wrapper-checked`]: radioProps.checked
+  const classes = classNames(`${prefixCls}-wrapper`, className, {
+    [`${prefixCls}-wrapper-disabled`]: radioProps.disabled,
+    [`${prefixCls}-wrapper-checked`]: radioProps.checked
   })
   
   return (

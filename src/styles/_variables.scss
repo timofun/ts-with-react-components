@@ -192,6 +192,16 @@ $border-radius: .25rem !default;
 $border-radius-lg: .3rem !default;
 $border-radius-sm: .2rem !default;
 
+$border-radius-base: 2px;
+//$border-radius-sm: $border-radius-base;
+
+// Border color
+$border-color-base: hsl(0, 0, 85%); // base border outline a component
+$border-color-split: hsl(0, 0, 94%); // split border inside a component
+$border-color-inverse: $white;
+$border-width-base: 1px; // width of the border for a component
+$border-style-base: solid; // style of a components border
+
 $background-color-light: hsl(0, 0, 98%); // background of header and selected item
 $background-color-base: hsl(0, 0, 96%); // Default grey background color
 
@@ -207,6 +217,29 @@ $box-shadow: 0 .5rem 1rem rgba($black, .15) !default;
 $box-shadow-lg: 0 1rem 3rem rgba($black, .175) !default;
 $box-shadow-inset: inset 0 1px 2px rgba($black, .075) !default;
 
+// height rules
+$height-base: 32px;
+$height-lg: 40px;
+$height-sm: 24px;
+
+// vertical paddings
+$padding-lg: 24px; // containers
+$padding-md: 16px; // small containers and buttons
+$padding-sm: 12px; // Form controls and items
+$padding-xs: 8px; // small items
+$padding-xss: 4px; // more small
+
+// vertical padding for all form controls
+$control-padding-horizontal: $padding-sm;
+$control-padding-horizontal-sm: $padding-xs;
+
+// vertical margins
+$margin-lg: 24px; // containers
+$margin-md: 16px; // small containers and buttons
+$margin-sm: 12px; // Form controls and items
+$margin-xs: 8px; // small items
+$margin-xss: 4px; // more small
+
 // 按钮
 // 按钮基本属性
 $btn-font-weight: 400;
@@ -215,6 +248,10 @@ $btn-padding-x: .75rem !default;
 $btn-font-family: $font-family-base !default;
 $btn-font-size: $font-size-base !default;
 $btn-line-height: $line-height-base !default;
+
+$btn-height-base: $height-base;
+$btn-height-lg: $height-lg;
+$btn-height-sm: $height-sm;
 
 //不同大小按钮的 padding 和 font size
 $btn-padding-y-sm: .25rem !default;
@@ -263,6 +300,10 @@ $menu-item-disabled-color: $gray-600 !default;
 $submenu-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .12), 0 0 6px 0 rgba(0, 0, 0, .04);
 
 //input
+$input-height-base: $height-base;
+$input-height-lg: $height-lg;
+$input-height-sm: $height-sm;
+
 $input-padding-y: $btn-padding-y !default;
 $input-padding-x: $btn-padding-x !default;
 $input-font-family: $btn-font-family !default;
@@ -328,7 +369,7 @@ $radio-solid-checked-color: $white;
 // Radio buttons
 $radio-button-bg: $white;
 $radio-button-checked-bg: $primary;
-$radio-button-color: $white;
+$radio-button-color: rgba($black, .65);
 $radio-button-hover-color: lighten($primary, 50%);
 $radio-button-active-color: darken($primary, 20%);
 $radio-disabled-button-checked-bg: lighten($black, 90%);

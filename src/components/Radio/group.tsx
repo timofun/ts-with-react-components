@@ -55,7 +55,8 @@ export const RadioGroup: FC<RadioGroupProps> = (props) => {
         onChange: onRadioChange,
         value,
         disabled: props.disabled,
-        name: props.name
+        name: props.name,
+        optionType: props.optionType,
       }}
     >
       {renderGroup()}

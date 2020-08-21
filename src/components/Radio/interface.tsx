@@ -7,31 +7,31 @@ export interface RadioGroupProps {
   prefixCls?: string;
   /** 自定义class */
   className?: string;
-  /** 自定义class */
+  /** 是否禁止点击 */
   disabled?: boolean;
-  /** 自定义class */
+  /** 样式 */
   style?: React.CSSProperties;
-  /** 自定义class */
+  /** 默认选中 */
   defaultValue?: any;
-  /** 自定义class */
+  /** radio值 */
   value?: any;
-  /** 自定义class */
+  /** change回调 */
   onChange?: (e: RadioChangeEvent) => void;
-  /** 自定义class */
+  /** radio大小 */
   size?: SizeType;
-  /** 自定义class */
+  /** 鼠标移入事件 */
   onMouseEnter?: React.MouseEventHandler<HTMLDivElement>;
-  /** 自定义class */
+  /** 鼠标移出事件 */
   onMouseLeave?: React.MouseEventHandler<HTMLDivElement>;
-  /** 自定义class */
+  /** 自定义name */
   name?: string;
-  /** 自定义class */
+  /** 自定义children */
   children?: React.ReactNode;
-  /** 自定义class */
+  /** 自定义id */
   id?: string;
-  /** 自定义class */
+  /** radio类型 */
   optionType?: RadioGroupOptionType;
-  /** 自定义class */
+  /** radio button类型 */
   buttonStyle?: RadioGroupButtonStyle;
 }
 
@@ -40,6 +40,7 @@ export interface RadioGroupContextProps {
   value: any;
   disabled?: boolean;
   name?: string;
+  optionType?: RadioGroupOptionType;
 }
 
 export interface AbstractCheckboxProps<T> {
