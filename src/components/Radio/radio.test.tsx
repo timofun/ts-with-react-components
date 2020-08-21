@@ -57,11 +57,15 @@ describe('test Radio component', () => {
   it('should render correct click radio in radioGroup', () => {
     wrapper = render(generateRadioGroup(defaultGroupProps))
     const firstElement = wrapper.container.querySelector('.funs-radio-wrapper') as HTMLElement
-    const selectedElement = wrapper.container.querySelector('.funs-radio-wrapper-checked') as HTMLElement
+    const secondElement = wrapper.container.querySelectorAll('.funs-radio-wrapper')[1] as HTMLElement
+    const disabledElement = wrapper.container.querySelector('.funs-radio-wrapper-disabled') as HTMLElement
     const inputInSelectedElement = wrapper.container.querySelector('.funs-radio-input') as HTMLInputElement
     expect(inputInSelectedElement.value).toEqual('1')
     radioElement = wrapper.getByText('radio2') as HTMLElement
-    fireEvent.click(radioElement)
-    expect(firstElement).not.toHaveClass('.funs-radio-wrapper-checked')
+    fireEvent.click(secondElement)
+    expect(firstElement).not.toHaveClass('funs-radio-wrapper-checked')
+    expect(secondElement).toHaveClass('funs-radio-wrapper funs-radio-wrapper-checked')
+    fireEvent.click(disabledElement)
+    expect(disabledElement).not.toHaveClass('funs-radio-wrapper-checked')
   })
 })
