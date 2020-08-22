@@ -187,9 +187,9 @@ span.funs-radio + * {
     color: $radio-dot-color;
   }
 
-  &:focus-within {
-    box-shadow: $radio-button-focus-shadow;
-  }
+  //&:focus-within {
+  //  box-shadow: $radio-button-focus-shadow;
+  //}
 
   .#{$radio-prefix-cls}-inner,
   input[type='checkbox'],
@@ -232,9 +232,9 @@ span.funs-radio + * {
       }
     }
 
-    &:focus-within {
-      box-shadow: $radio-button-focus-shadow;
-    }
+    //&:focus-within {
+    //  box-shadow: $radio-button-focus-shadow;
+    //}
   }
 
   .#{$radio-prefix-cls}-group-solid &-checked:not(&-disabled) {
@@ -254,9 +254,9 @@ span.funs-radio + * {
       border-color: $radio-button-active-color;
     }
 
-    &:focus-within {
-      box-shadow: $radio-button-focus-shadow;
-    }
+    //&:focus-within {
+    //  box-shadow: $radio-button-focus-shadow;
+    //}
   }
 
   &-disabled {

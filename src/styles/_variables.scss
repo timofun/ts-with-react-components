@@ -370,7 +370,7 @@ $radio-solid-checked-color: $white;
 $radio-button-bg: $white;
 $radio-button-checked-bg: $primary;
 $radio-button-color: rgba($black, .65);
-$radio-button-hover-color: lighten($primary, 50%);
+$radio-button-hover-color: fade_out($primary, .2);
 $radio-button-active-color: darken($primary, 20%);
 $radio-disabled-button-checked-bg: lighten($black, 90%);
 $radio-disabled-button-checked-color: $white;
