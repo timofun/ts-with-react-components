@@ -4,6 +4,12 @@ import classNames from 'classnames'
 import { RadioProps, RadioChangeEvent, RadioGroupContext } from './interface'
 import { ConfigContext } from '../configProvider/context'
 
+/**
+ * 为网站提供导航功能的菜单。支持横向纵向两种模式，支持下拉菜单。
+ * ~~~js
+ * import { Radio } from 'funs-react-ui'
+ * ~~~
+ */
 export const Radio: FC<RadioProps> = (props) => {
   const context = React.useContext(RadioGroupContext)
   const { getPrefixCls } = useContext(ConfigContext)
