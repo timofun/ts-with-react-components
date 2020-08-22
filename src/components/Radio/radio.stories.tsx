@@ -14,7 +14,7 @@ const disabledRadio = () => (
 )
 
 const groupRadio = () => (
-  <TransRadio.Group defaultValue={1}>
+  <TransRadio.Group defaultValue={1} className="test">
     <Radio value={1}>Radio1</Radio>
     <Radio value={2}>Radio2</Radio>
     <Radio value={3} disabled>Radio3</Radio>
@@ -22,7 +22,7 @@ const groupRadio = () => (
 )
 
 const groupRadioButton = () => (
-  <TransRadio.Group defaultValue={3} optionType="button" buttonStyle="solid">
+  <TransRadio.Group defaultValue={1} optionType="button" buttonStyle="solid" className="test-radio-button">
     <Radio value={1}>Radio1</Radio>
     <Radio value={2}>Radio2</Radio>
     <Radio value={3} disabled>Radio3</Radio>

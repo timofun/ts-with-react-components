@@ -19,8 +19,24 @@ const defaultGroupProps: RadioGroupProps = {
   className: 'test'
 }
 
+const radioButtonProps: RadioGroupProps = {
+  defaultValue: 1,
+  className: 'test-radio-button',
+  buttonStyle: 'solid',
+  optionType: 'button'
+}
 
 const generateRadioGroup = (props: RadioGroupProps) => {
+  return(
+    <RadioGroup {...props}>
+      <Radio value={1}>radio1</Radio>
+      <Radio value={2}>radio2</Radio>
+      <Radio value={3} disabled>radio3</Radio>
+    </RadioGroup>
+  )
+}
+
+const generateRadioButtonGroup = (props: RadioGroupProps) => {
   return(
     <RadioGroup {...props}>
       <Radio value={1}>radio1</Radio>
@@ -67,5 +83,21 @@ describe('test Radio component', () => {
     expect(secondElement).toHaveClass('funs-radio-wrapper funs-radio-wrapper-checked')
     fireEvent.click(disabledElement)
     expect(disabledElement).not.toHaveClass('funs-radio-wrapper-checked')
+  })
+  it('should render correct radioButton', () => {
+    wrapper = render(generateRadioButtonGroup(radioButtonProps))
+    const wrapperElement = wrapper.container.querySelector('.funs-radio-group') as HTMLElement
+    expect(wrapperElement).toHaveClass('funs-radio-group funs-radio-group-solid test-radio-button')
+    const firstElement = wrapper.container.querySelector('.funs-radio-button-wrapper') as HTMLElement
+    const secondElement = wrapper.container.querySelectorAll('.funs-radio-button-wrapper')[1] as HTMLElement
+    const disabledElement = wrapper.container.querySelector('.funs-radio-button-wrapper-disabled') as HTMLElement
+    const inputInSelectedElement = wrapper.container.querySelector('.funs-radio-button-input') as HTMLInputElement
+    expect(inputInSelectedElement.value).toEqual('1')
+    radioElement = wrapper.getByText('radio2') as HTMLElement
+    fireEvent.click(secondElement)
+    expect(firstElement).not.toHaveClass('funs-radio-button-wrapper-checked')
+    expect(secondElement).toHaveClass('funs-radio-button-wrapper funs-radio-button-wrapper-checked')
+    fireEvent.click(disabledElement)
+    expect(disabledElement).not.toHaveClass('funs-radio-button-wrapper-checked')
   })
 })
