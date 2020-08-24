@@ -5,7 +5,8 @@ import { RadioProps, RadioChangeEvent, RadioGroupContext } from './interface'
 import { ConfigContext } from '../configProvider/context'
 
 /**
- * 为网站提供导航功能的菜单。支持横向纵向两种模式，支持下拉菜单。
+ * 用于在多个备选项中选中单个状态。
+ * 和 Select 的区别是，Radio 所有选项默认可见，方便用户在比较中选择，因此选项不宜过多。
  * ~~~js
  * import { Radio } from 'funs-react-ui'
  * ~~~

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { AbstractCheckboxProps } from '../Checkbox/checkbox'
 export type RadioGroupButtonStyle = 'outline' | 'solid';
 export type RadioGroupOptionType = 'default' | 'button';
 export type SizeType = 'sm' | 'mid' | 'lg' | undefined;
@@ -41,28 +42,6 @@ export interface RadioGroupContextProps {
   disabled?: boolean;
   name?: string;
   optionType?: RadioGroupOptionType;
-}
-
-export interface AbstractCheckboxProps<T> {
-  prefixCls?: string;
-  className?: string;
-  defaultChecked?: boolean;
-  checked?: boolean;
-  style?: React.CSSProperties;
-  disabled?: boolean;
-  onChange?: (e: T) => void;
-  onClick?: React.MouseEventHandler<HTMLElement>;
-  onMouseEnter?: React.MouseEventHandler<HTMLElement>;
-  onMouseLeave?: React.MouseEventHandler<HTMLElement>;
-  onKeyPress?: React.KeyboardEventHandler<HTMLElement>;
-  onKeyDown?: React.KeyboardEventHandler<HTMLElement>;
-  value?: any;
-  tabIndex?: number;
-  name?: string;
-  children?: React.ReactNode;
-  id?: string;
-  autoFocus?: boolean;
-  type?: string;
 }
 
 export type RadioProps = AbstractCheckboxProps<RadioChangeEvent>;
