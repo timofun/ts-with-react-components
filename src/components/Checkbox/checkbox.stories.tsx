@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 import { storiesOf } from '@storybook/react'
-import CheckBox from './checkbox'
+import CheckBox, { CheckboxProps } from './checkbox'
 import Button from '../Button/button'
 
 const defaultCheckbox = () => (
   <CheckBox>defaultCheckbox</CheckBox>
 )
 
-// react-hooks/rules-of-hooks
+// eslint-disable react-hooks/rules-of-hooks
 const linkedCheckbox = () => {
   const [checked, setCheck] = useState(false)
   const [disabled, setDisabled] = useState(false)

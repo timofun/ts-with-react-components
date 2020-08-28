@@ -9,10 +9,10 @@ const wrapperStyle: React.CSSProperties = {
   padding: '20px 40px'
 }
 
-const storyWrapper = (stroyFn: any) => (
+const storyWrapper = (storyFn: any) => (
   <div style={wrapperStyle}>
     <h3>组件演示</h3>
-    {stroyFn()}
+    {storyFn()}
   </div>
 )
 addDecorator(storyWrapper)
