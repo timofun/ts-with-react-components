@@ -42,7 +42,7 @@ export interface CheckboxGroupContext {
 
 export const GroupContext = React.createContext<CheckboxGroupContext | null>(null);
 
-export const checkboxGroup: FC<CheckboxGroupProps> = (props) => {
+export const CheckboxGroup: FC<CheckboxGroupProps> = (props) => {
   const defaultValue = props.value || props.defaultValue || []
   const [stateValue, setStateValue] = useState(defaultValue)
   const [ registeredValues, setRegisteredValues] = useState<string[]>([])
@@ -155,3 +155,5 @@ export const checkboxGroup: FC<CheckboxGroupProps> = (props) => {
     <ConfigConsumer>{renderGroup}</ConfigConsumer>
   )
 }
+
+export default CheckboxGroup

@@ -1,10 +1,11 @@
 import React, { FC, useState } from 'react'
 import { storiesOf } from '@storybook/react'
-import CheckBox, { CheckboxProps } from './checkbox'
+import Checkbox, { CheckboxProps } from './checkbox'
 import Button from '../Button/button'
+import CheckboxGroup from './group'
 
 const defaultCheckbox = () => (
-  <CheckBox>defaultCheckbox</CheckBox>
+  <Checkbox>defaultCheckbox</Checkbox>
 )
 
 // eslint-disable react-hooks/rules-of-hooks
@@ -22,7 +23,7 @@ const linkedCheckbox = () => {
   return (
     <>
       <p>
-        <CheckBox checked={checked} disabled={disabled}>defaultCheckbox</CheckBox>
+        <Checkbox checked={checked} disabled={disabled}>defaultCheckbox</Checkbox>
       </p>
       <p>
         <Button onClick={toggleChecked}>
@@ -36,6 +37,17 @@ const linkedCheckbox = () => {
   )
 }
 
+const checkboxGroup = () => {
+  return(
+    <CheckboxGroup>
+      <Checkbox>checkbox1</Checkbox>
+      <Checkbox>checkbox2</Checkbox>
+      <Checkbox>checkbox3</Checkbox>
+    </CheckboxGroup>
+  )
+}
+
 storiesOf('Checkbox Component', module)
   .add('defaultCheckbox', defaultCheckbox)
   .add('linkedCheckbox', linkedCheckbox)
+  .add('checkboxGroup', checkboxGroup)
