@@ -73,14 +73,14 @@ export const Checkbox: FC<CheckboxProps> = (props: CheckboxProps) => {
       rcCheckbox = node
     }
     
-    const focus = () => {
-      rcCheckbox.focus()
-    }
-    
-    const blur = () => {
-      rcCheckbox.blur()
-    }
-    
+    // const focus = () => {
+    //   rcCheckbox.focus()
+    // }
+    //
+    // const blur = () => {
+    //   rcCheckbox.blur()
+    // }
+    //
     const checkboxGroup = context
     const prefixCls = getPrefixCls('checkbox', customizePrefixCls)
     const checkboxProps: CheckboxProps = { ...restProps }
@@ -129,3 +129,5 @@ export const Checkbox: FC<CheckboxProps> = (props: CheckboxProps) => {
     </ConfigConsumer>
   )
 }
+
+export default Checkbox

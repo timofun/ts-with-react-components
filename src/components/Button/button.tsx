@@ -13,7 +13,8 @@ interface BaseButtonProps {
   /**设置 Button 的类型 */
   btnType?: ButtonType;
   children: React.ReactNode;
-  href?: string
+  href?: string,
+  onClick?: React.MouseEventHandler<HTMLElement>;
 }
 
 type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLElement>
@@ -35,8 +36,15 @@ export const Button: FC<ButtonProps> = (props) => {
     size,
     children,
     href,
+    onClick,
     ...restProps
   } = props
+  
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>) => {
+    if (onClick) {
+      (onClick as React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>)(e)
+    }
+  }
   
   const classes = classNames('btn', className, {
     [`btn-${btnType}`]: btnType,
@@ -52,7 +60,7 @@ export const Button: FC<ButtonProps> = (props) => {
     )
   } else {
     return (
-      <button className={classes} disabled={disabled} {...restProps}>
+      <button className={classes} disabled={disabled} {...restProps} onClick={handleClick}>
         {children}
       </button>
     )
@@ -64,4 +72,4 @@ Button.defaultProps = {
   btnType: 'default'
 }
 
-export default Button;
+export default Button

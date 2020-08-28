@@ -1,4 +1,4 @@
-$radio-prefix-cls: 'funs-radio';
+$radio-prefix-cls: #{$style-prefix}-radio;
 $radio-duration: 0.3s;
 $radio-focus-shadow: 0 0 0 3px fade-out($radio-dot-color, 0.08);
 $radio-button-focus-shadow: $radio-focus-shadow;

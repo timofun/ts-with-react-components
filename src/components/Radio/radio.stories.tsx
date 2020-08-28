@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { storiesOf } from '@storybook/react'
 import Radio from './radio'
 import TransRadio from './index'
@@ -19,13 +19,6 @@ const disabledRadio = () => (
 )
 
 const groupRadio = () => {
-  // const [value, setValue] = useState(1)
-  // const onChange = (e: any) => {
-  //   setValue(e.target.value)
-  // }
-  // useEffect(() => {
-  //   console.log(value)
-  // }, [value])
   return (
     <TransRadio.Group defaultValue={1} className="test">
       <Radio value={1}>Radio1</Radio>

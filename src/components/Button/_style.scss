@@ -64,6 +64,10 @@
   }
 }
 
+.btn, .btn:active, .btn:focus {
+  outline: 0;
+}
+
 // .btn {
 //   border: none;
 //   border-radius: 20px;

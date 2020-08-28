@@ -1,3 +1,5 @@
+$style-prefix: funs;
+
 $white: #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
@@ -375,3 +377,11 @@ $radio-button-active-color: darken($primary, 20%);
 $radio-disabled-button-checked-bg: lighten($black, 90%);
 $radio-disabled-button-checked-color: $white;
 $radio-wrapper-margin-right: 8px;
+
+// Checkbox
+$checkbox-size: 16px;
+$checkbox-color: $primary;
+$checkbox-check-color: #fff;
+$checkbox-check-bg: $checkbox-check-color;
+$checkbox-border-width: $border-width-base;
+$checkbox-group-item-margin-right: 8px;
