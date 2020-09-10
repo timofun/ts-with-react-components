@@ -1,6 +1,6 @@
-import React, { FC, useState } from 'react'
+import React, { useState } from 'react'
 import { storiesOf } from '@storybook/react'
-import Checkbox, { CheckboxProps } from './checkbox'
+import Checkbox from './checkbox'
 import Button from '../Button/button'
 import CheckboxGroup from './group'
 
@@ -38,7 +38,7 @@ const linkedCheckbox = () => {
 }
 
 const checkboxGroup = () => {
-  return(
+  return (
     <CheckboxGroup>
       <Checkbox>checkbox1</Checkbox>
       <Checkbox>checkbox2</Checkbox>
