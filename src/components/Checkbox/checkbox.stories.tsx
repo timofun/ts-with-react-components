@@ -9,7 +9,7 @@ const defaultCheckbox = () => (
 )
 
 // eslint-disable react-hooks/rules-of-hooks
-const linkedCheckbox = () => {
+const useLinkedCheckbox = () => {
   const [checked, setCheck] = useState(false)
   const [disabled, setDisabled] = useState(false)
   
@@ -49,5 +49,5 @@ const checkboxGroup = () => {
 
 storiesOf('Checkbox Component', module)
   .add('defaultCheckbox', defaultCheckbox)
-  .add('linkedCheckbox', linkedCheckbox)
+  .add('linkedCheckbox', useLinkedCheckbox)
   .add('checkboxGroup', checkboxGroup)
