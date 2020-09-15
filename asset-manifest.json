@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/timofun/ts-with-react-components/static/css/main.59e0b693.chunk.css",
+    "main.js": "/timofun/ts-with-react-components/main.862059c2d3567196da4b.bundle.js",
+    "main.css.map": "/timofun/ts-with-react-components/static/css/main.59e0b693.chunk.css.map",
+    "main.js.map": "/timofun/ts-with-react-components/main.862059c2d3567196da4b.bundle.js.map",
+    "runtime~main.js": "/timofun/ts-with-react-components/runtime~main.862059c2d3567196da4b.bundle.js",
+    "runtime~main.js.map": "/timofun/ts-with-react-components/runtime~main.862059c2d3567196da4b.bundle.js.map",
+    "vendors~main.css": "/timofun/ts-with-react-components/static/css/vendors~main.f8f248a5.chunk.css",
+    "vendors~main.js": "/timofun/ts-with-react-components/vendors~main.862059c2d3567196da4b.bundle.js",
+    "vendors~main.css.map": "/timofun/ts-with-react-components/static/css/vendors~main.f8f248a5.chunk.css.map",
+    "vendors~main.js.map": "/timofun/ts-with-react-components/vendors~main.862059c2d3567196da4b.bundle.js.map",
+    "iframe.html": "/timofun/ts-with-react-components/iframe.html",
+    "precache-manifest.ac644ff7fec78f0a3eb7b68306f0ffe7.js": "/timofun/ts-with-react-components/precache-manifest.ac644ff7fec78f0a3eb7b68306f0ffe7.js",
+    "service-worker.js": "/timofun/ts-with-react-components/service-worker.js",
+    "vendors~main.862059c2d3567196da4b.bundle.js.LICENSE.txt": "/timofun/ts-with-react-components/vendors~main.862059c2d3567196da4b.bundle.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "runtime~main.862059c2d3567196da4b.bundle.js",
+    "static/css/vendors~main.f8f248a5.chunk.css",
+    "vendors~main.862059c2d3567196da4b.bundle.js",
+    "static/css/main.59e0b693.chunk.css",
+    "main.862059c2d3567196da4b.bundle.js"
+  ]
+}
