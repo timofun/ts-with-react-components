@@ -51,7 +51,7 @@ const Select: React.FC<SelectProps<SelectValue>> = (props) => {
       getPopupContainer,
       dropdownClassName,
       bordered,
-    } = this.props as InternalSelectProps<ValueType>;
+    } = props as InternalSelectProps<ValueType>;
     
     const prefixCls = getPrefixCls('select', customizePrefixCls);
     const mode = this.getMode();
