@@ -6,6 +6,7 @@ import { OptionProps } from 'rc-select/lib/Option'
 import SizeContext, { SizeType } from '../configProvider/sizeContext'
 import { ConfigConsumer, ConfigConsumerProps } from '../configProvider/context'
 import ValueType = WebAssembly.ValueType
+import getIcons from '../utils/iconUtil'
 
 type RawValue = string | number;
 
