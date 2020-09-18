@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import classNames from 'classnames'
+import omit from 'omit.js'
 import RcSelect, { Option, OptGroup, SelectProps as RcSelectProps } from 'rc-select'
 import { OptionProps } from 'rc-select/lib/Option'
 import SizeContext, { SizeType } from '../configProvider/sizeContext'
@@ -33,6 +34,45 @@ export interface SelectProps<VT> extends Omit<InternalSelectProps<VT>, 'inputIco
 }
 
 const Select: React.FC<SelectProps<SelectValue>> = (props) => {
+  const [option, setOption] = useState(Option)
+  
+  const [optGroup, setOptGroup] = useState(OptGroup)
+
+  const SECRET_COMBOBOX_MODE_DO_NOT_USE = 'SECRET_COMBOBOX_MODE_DO_NOT_USE';
+
+  const defaultProps = {
+    transitionName: 'slide-up',
+    choiceTransitionName: 'zoom',
+    bordered: true,
+  };
+  
+  // @ts-ignore
+  const selectRef = React.createRef<RcSelect<ValueType>>();
+  const focus = () => {
+    if (selectRef.current) {
+      selectRef.current.focus();
+    }
+  };
+
+  const blur = () => {
+    if (selectRef.current) {
+      selectRef.current.blur();
+    }
+  };
+  
+  const getMode = () => {
+    const { mode } = props as InternalSelectProps<ValueType>;
+    
+    if ((mode as any) === 'combobox') {
+      return undefined;
+    }
+    
+    if (mode === SECRET_COMBOBOX_MODE_DO_NOT_USE) {
+      return 'combobox';
+    }
+    
+    return mode;
+  };
   const renderSelect = ({
     getPopupContainer: getContextPopupContainer,
     getPrefixCls,
@@ -54,7 +94,7 @@ const Select: React.FC<SelectProps<SelectValue>> = (props) => {
     } = props as InternalSelectProps<ValueType>;
     
     const prefixCls = getPrefixCls('select', customizePrefixCls);
-    const mode = this.getMode();
+    const mode = getMode();
     
     const isMultiple = mode === 'multiple' || mode === 'tags';
     
@@ -65,17 +105,17 @@ const Select: React.FC<SelectProps<SelectValue>> = (props) => {
     } else if (mode === 'combobox') {
       mergedNotFound = null;
     } else {
-      mergedNotFound = renderEmpty('Select');
+      // mergedNotFound = renderEmpty('Select');
     }
     
     // ===================== Icons =====================
     const { suffixIcon, itemIcon, removeIcon, clearIcon } = getIcons({
-      ...this.props,
+      ...props,
       multiple: isMultiple,
       prefixCls,
     });
     
-    const selectProps = omit(this.props, [
+    const selectProps = omit(props, [
       'prefixCls',
       'suffixIcon',
       'itemIcon',
@@ -101,7 +141,7 @@ const Select: React.FC<SelectProps<SelectValue>> = (props) => {
           
           return (
             <RcSelect<ValueType>
-              ref={this.selectRef}
+              ref={selectRef}
               virtual={virtual}
               dropdownMatchSelectWidth={dropdownMatchSelectWidth}
               {...selectProps}
